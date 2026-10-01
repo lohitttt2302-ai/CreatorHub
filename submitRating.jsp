@@ -1,0 +1,3 @@
+<%@ page import="com.creatorhub.bean.Rating" %><%@ page import="com.creatorhub.dao.RatingDAO" %><%
+Integer student=(Integer)session.getAttribute("student_id");if(student==null){response.sendRedirect("login.jsp");return;}Rating r=new Rating();r.setStudentId(student);r.setCreatorId(Integer.parseInt(request.getParameter("creator_id")));r.setCollabId(Integer.parseInt(request.getParameter("collab_id")));r.setRating(Integer.parseInt(request.getParameter("rating")));r.setReview(request.getParameter("review"));new RatingDAO().add(r);response.sendRedirect("profile.jsp?id="+r.getCreatorId()+"&role=CREATOR");
+%>

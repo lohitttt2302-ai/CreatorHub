@@ -1,0 +1,7 @@
+<%@ page contentType="text/html;charset=UTF-8" %><%
+if(!"CREATOR".equalsIgnoreCase((String)session.getAttribute("role"))){response.sendRedirect("login.jsp");return;}
+%>
+<!DOCTYPE html><html><head><title>Create collaboration · Creator Hub</title><link rel="stylesheet" href="style.css"></head><body>
+<%@ include file="sidebar.jsp" %><nav class="nav"><a class="brand" href="creatorDashboard.jsp">Creator Hub</a><div class="navlinks"><a href="profile.jsp?id=<%=session.getAttribute("student_id")%>&role=CREATOR">My Profile</a><a href="logout.jsp" class="logout">Logout</a></div></nav>
+<div class="container"><div class="form-card card"><span class="pill">CREATE OPPORTUNITY</span><h1>Find the right collaborator.</h1><p class="muted">Be specific. Great descriptions attract better applications.</p>
+<form action="saveCollaboration.jsp" method="post"><label>Title</label><input name="title" placeholder="Need a video editor for my YouTube channel" required><label>Category</label><select name="category" required><option value="">Select category</option><option>Video Editing</option><option>Podcast</option><option>Photography</option><option>Design</option><option>Music</option><option>Writing</option></select><label>Description</label><textarea name="description" rows="8" placeholder="What are you creating? What skills do you need? What will the collaborator do?" required></textarea><div class="actions"><button class="btn" type="submit">Publish collaboration</button><a class="btn secondary" href="creatorDashboard.jsp">Cancel</a></div></form></div></div></body></html>

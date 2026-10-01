@@ -1,0 +1,3 @@
+<%@ page import="com.creatorhub.dao.LikeDAO" %><%
+Integer liker=(Integer)session.getAttribute("student_id");if(liker==null){response.sendRedirect("login.jsp");return;}String t=request.getParameter("target_id"),role=request.getParameter("target_role"),back=request.getParameter("back");if(t!=null&&role!=null&&!liker.equals(Integer.parseInt(t)))new LikeDAO().toggle(liker,Integer.parseInt(t),role);if(back==null||back.isEmpty())back="leaderboard.jsp";response.sendRedirect(back);
+%>

@@ -1,0 +1,5 @@
+<%@ page import="com.creatorhub.bean.Collaboration" %><%@ page import="com.creatorhub.dao.CollaborationDAO" %><%@ page contentType="text/html;charset=UTF-8" %>
+<%
+String role=(String)session.getAttribute("role");Integer id=(Integer)session.getAttribute("student_id");if(!"CREATOR".equalsIgnoreCase(role)||id==null){response.sendRedirect("login.jsp");return;}
+Collaboration c=new Collaboration();c.setCreatorId(id);c.setTitle(request.getParameter("title"));c.setCategory(request.getParameter("category"));c.setDescription(request.getParameter("description"));c.setStatus("OPEN");boolean ok=new CollaborationDAO().createCollaboration(c);
+%><!DOCTYPE html><html><head><title>Creator Hub</title><link rel="stylesheet" href="style.css"></head><body><div class="container"><div class="form-card card center"><h1><%=ok?"Collaboration created!":"Could not create collaboration"%></h1><p class="muted"><%=ok?"Your opportunity is now visible to students.":"Please try again."%></p><a class="btn" href="creatorDashboard.jsp">Back to dashboard</a></div></div></body></html>

@@ -1,0 +1,3 @@
+<%@ page import="com.creatorhub.dao.CollaborationDAO" %><%
+String role=(String)session.getAttribute("role");Integer id=(Integer)session.getAttribute("student_id");if(!"CREATOR".equalsIgnoreCase(role)||id==null){response.sendRedirect("login.jsp");return;}String x=request.getParameter("collab_id");if(x!=null)new CollaborationDAO().deleteCollaboration(Integer.parseInt(x),id);response.sendRedirect("creatorDashboard.jsp");
+%>

@@ -1,0 +1,3 @@
+<%@ page import="com.creatorhub.dao.StudentDAO" %><%
+Integer id=(Integer)session.getAttribute("student_id");if(id==null){response.sendRedirect("login.jsp");return;}boolean ok=new StudentDAO().updateProfile(id,request.getParameter("name"),request.getParameter("bio"),request.getParameter("skills"),request.getParameter("linkedin_url"));session.setAttribute("student_name",request.getParameter("name"));response.sendRedirect("studentPortal.jsp");
+%>

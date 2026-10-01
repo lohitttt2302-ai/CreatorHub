@@ -1,0 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Creator Hub</title><link rel="stylesheet" href="style.css"></head>
+<body><nav class="nav"><a class="brand" href="index.jsp">Creator Hub</a><div class="navlinks"><a href="leaderboard.jsp">Leaderboards</a><a href="login.jsp">Login</a><a class="btn" href="signup.jsp">Join Creator Hub</a></div></nav>
+<div class="container"><section class="hero"><span class="pill">CAMPUS CREATOR NETWORK</span><h1>Find your next great collaboration.</h1><p>Discover student creators, showcase your work, build reputation, earn credits and turn great ideas into real collaborations.</p><div class="actions"><a class="btn" href="signup.jsp">Start building</a><a class="btn secondary" href="leaderboard.jsp">Explore talent</a></div></section>
+<div class="grid topspace"><div class="card"><h3>🎨 Build your profile</h3><p class="muted">Show your skills, LinkedIn, portfolio and collaboration history.</p></div><div class="card"><h3>🤝 Collaborate smarter</h3><p class="muted">Apply with a clear pitch and let creators see your previous work.</p></div><div class="card"><h3>🏆 Build reputation</h3><p class="muted">Earn credits, likes and ratings that make your profile stand out.</p></div></div></div>
+<div class="footer">Creator Hub · Student Creator Collaboration Platform</div></body></html>
